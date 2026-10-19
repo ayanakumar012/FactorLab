@@ -33,5 +33,5 @@ try:
 st.download_button('Download comparison CSV', contrast.to_csv(index=False), 'factorlab_comparison.csv', 'text/csv')
     st.warning(interpretation_warning())
 except Exception as exc:
-    st.error(f'Unable to run AlphaLens: {exc}')
+    st.error(f'Unable to run FactorLab: {exc}')
     st.info('Check your internet connection and whether the public data source URLs are available.')
