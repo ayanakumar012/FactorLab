@@ -1,4 +1,4 @@
-"""AlphaLens data loader. Returns percent monthly portfolio returns and CPI levels."""
+"""FactorLab data loader. Returns percent monthly portfolio returns and CPI levels."""
 import io
 import re
 import urllib.request
@@ -12,7 +12,7 @@ PORTFOLIOS = ['Small Growth', 'Small Neutral', 'Small Value', 'Big Growth', 'Big
 
 def fetch_french_monthly(url=FRENCH_URL):
     """Download Kenneth French six size/value portfolios, percent monthly returns."""
-    req = urllib.request.Request(url, headers={'User-Agent': 'AlphaLens educational research (public data)'})
+    req = urllib.request.Request(url, headers={'User-Agent': 'FactorLab educational research (public data)'})
     with urllib.request.urlopen(req, timeout=40) as response:
         payload = response.read()
     with zipfile.ZipFile(io.BytesIO(payload)) as archive:
