@@ -9,7 +9,11 @@ st.title('FactorLab')
 st.subheader('Does inflation change which types of stocks perform best?')
 st.caption('Historical U.S. stock portfolios by size and value; research, not investment advice.')
 threshold = st.slider('High-inflation threshold (year-over-year CPI, %)', 1.0, 8.0, 3.0, 0.5)
-start = st.selectbox('Start year', [1990, 1995, 2000, 2005, 2010, 2015], index=2)
+start = st.selectbox(
+    "Start year",
+    list(range(1990, 2027)),
+    index=10
+)
 
 @st.cache_data(ttl=86400)
 def download():
