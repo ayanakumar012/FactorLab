@@ -1,1 +1,1 @@
-"""AlphaLens research package."""
+"""FactorLab research package."""
