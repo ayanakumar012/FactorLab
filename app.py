@@ -4,8 +4,8 @@ import plotly.express as px
 from src.data import fetch_french_monthly, fetch_cpi, prepare_data
 from src.analysis import summary_table, contrast_table, interpretation_warning
 
-st.set_page_config(page_title='AlphaLens', layout='wide')
-st.title('AlphaLens')
+st.set_page_config(page_title='FactorLab', layout='wide')
+st.title('FactorLab')
 st.subheader('Does inflation change which types of stocks perform best?')
 st.caption('Historical U.S. stock portfolios by size and value; research, not investment advice.')
 threshold = st.slider('High-inflation threshold (year-over-year CPI, %)', 1.0, 8.0, 3.0, 0.5)
