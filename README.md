@@ -16,14 +16,6 @@ Once deployed, open your Streamlit app URL. Choose a starting year and an inflat
 - **High inflation:** available year-over-year CPI inflation > 3% by default; this threshold is adjustable.
 - **Statistics:** historical conditional arithmetic means (monthly %), not predictions. Observed differences do **not** demonstrate causation or statistical significance.
 
-## Deploy with GitHub + Streamlit Community Cloud — browser only
-
-1. Sign into GitHub, create a **public** repository called `AlphaLens`, and do **not** add a README during repository creation.
-2. From your computer, upload the **contents of this folder**, not the enclosing folder, so `app.py` and `requirements.txt` sit at the repository root.
-3. Visit https://share.streamlit.io/ and sign in with GitHub. Select **Create app** / **Deploy an app**, and select the AlphaLens repository, branch `main`, and main file `app.py`.
-4. Deploy and wait for Streamlit to install packages and load publicly available datasets.
-5. If it fails, copy the **error logs** from Streamlit and ask for troubleshooting help. Never paste GitHub passwords or tokens.
-
 The app fetches public data when launched; the server needs network access to the Kenneth French Data Library and FRED. Free hosting and remote sites can have temporary rate limits or outages.
 
 ## Project files
