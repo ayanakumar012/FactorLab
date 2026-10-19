@@ -2,17 +2,31 @@
 
 **Does inflation change which types of stocks perform best?**
 
-A browser-based interactive research application comparing monthly returns of six U.S. size/value portfolios across high- and low-inflation environments. It also estimates historical Fama–French five-factor exposures with HAC standard errors.
+FactorLab is an interactive, browser-hosted quantitative finance research dashboard comparing six U.S. stock portfolios across inflation environments, with optional Fama–French five-factor regressions.
 
-## Data sources
-- Kenneth French Data Library: value-weighted **6 Portfolios Formed on Size and Book-to-Market**; U.S. **Fama/French 5 Factors (2x3)**, monthly.
-- FRED **CPIAUCSL**: monthly CPI levels, transformed to year-over-year inflation, lagged two months for a simple publication-delay proxy.
+**Live application:** https://factorlab-research.streamlit.app/
 
-## How to deploy
-Upload `app.py`, `requirements.txt`, `README.md`, and the full `src/` folder into the repository root. On Streamlit Community Cloud, select `app.py` as the entry point. No local installation required.
+## Navigate the dashboard
 
-## Limitations
-Exploratory historical comparisons, not causality or investment recommendations. Latest-revised CPI rather than point-in-time release vintages. Model fit is in-sample and factor portfolios are related by construction. Differences across inflation regimes require appropriate formal testing and robustness checks before publication as conclusive findings.
+1. **Performance overview:** See high- and low-inflation sample leaders, historical monthly returns, and an optional detailed table.
+2. **Factor analysis:** Pick a stock group and sample to examine estimated market, size, value, profitability, and investment exposures.
+3. **Research notes:** Read the methodology, source links, and limitations.
 
-## Reader guide
-Choose a start year and inflation threshold, read the Compare stock groups tab, then use Five-factor regression for a deeper analysis. Group winners are descriptive averages rather than statistical or investment recommendations.
+Set the sample start and inflation threshold in the sidebar. Downloadable CSVs are available inside expandable sections.
+
+## Data and methods
+
+- Six size/book-to-market portfolios and monthly five-factor series from the [Kenneth French Data Library](https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html).
+- CPIAUCSL index from [FRED](https://fred.stlouisfed.org/series/CPIAUCSL).
+- Inflation: year-over-year CPI percentage change, shifted two calendar months as a conservative *approximation* for publication lag. This uses revised CPI, not point-in-time vintages.
+- Regressions: monthly portfolio return minus RF on the five Fama–French factors with an intercept and HAC(3) standard errors.
+
+**Interpretation warning:** Descriptive differences are not causal evidence, a prediction, or proof of statistical robustness. Sensitivity to inflation threshold, crisis years, CPI vintage, and multiple hypothesis tests warrants further validation.
+
+## Deploy
+
+Streamlit Community Cloud: connect this repository, choose the `main` branch and `app.py` as the entry point. No laptop-side installations are required for visitors.
+
+## Repository structure
+
+`app.py` (interface), `src/data.py` (data sources/prep), `src/analysis.py` (descriptive statistics), `src/factors.py` (regressions), `tests/` (automated checks).
