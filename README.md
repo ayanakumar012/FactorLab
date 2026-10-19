@@ -13,3 +13,6 @@ Upload `app.py`, `requirements.txt`, `README.md`, and the full `src/` folder int
 
 ## Limitations
 Exploratory historical comparisons, not causality or investment recommendations. Latest-revised CPI rather than point-in-time release vintages. Model fit is in-sample and factor portfolios are related by construction. Differences across inflation regimes require appropriate formal testing and robustness checks before publication as conclusive findings.
+
+## Reader guide
+Choose a start year and inflation threshold, read the Compare stock groups tab, then use Five-factor regression for a deeper analysis. Group winners are descriptive averages rather than statistical or investment recommendations.
