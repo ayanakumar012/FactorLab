@@ -30,7 +30,12 @@ try:
                  barmode='group', title='Average monthly return (%) by inflation regime')
     st.plotly_chart(fig, use_container_width=True)
     st.dataframe(contrast.round(3), use_container_width=True)
-st.download_button('Download comparison CSV', contrast.to_csv(index=False), 'alphalens_comparison.csv', 'text/csv')
+    st.download_button(
+        'Download comparison CSV',
+        contrast.to_csv(index=False),
+        'factorlab_comparison.csv',
+        'text/csv'
+    )
     st.warning(interpretation_warning())
 except Exception as exc:
     st.error(f'Unable to run AlphaLens: {exc}')
