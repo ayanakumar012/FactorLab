@@ -1,4 +1,4 @@
-# AlphaLens
+# FactorLab
 
 **Research question:** Does inflation change which types of stocks perform best?
 
